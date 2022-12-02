@@ -1,6 +1,5 @@
-/**
- * DayOne
- */
+import java.util.Arrays;
+
 public class DayOne {
 
     static int[][] input = { { 2936, 2154, 1578, 4820, 5674, 5582, 2392, 6148, 1276, 1783, 2572, 5067, 3526 },
@@ -177,7 +176,7 @@ public class DayOne {
         int GroupB = 0;
         for (int i = 0; i < input.length; i++) {
             GroupA = Arrays.stream(input[i]).sum();
-            if (GroupA > GroupB) {
+            if (GroupA >= GroupB) {
                 GroupB = GroupA;
                 GroupA = 0;
             }
