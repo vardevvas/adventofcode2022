@@ -1,8 +1,9 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Day3 {
-    String[] input = { "dtddvvhwttHJhwdhJPddhwJGppmGjgpQgTjQplQpTljwpg",
+    static String[] input = { "dtddvvhwttHJhwdhJPddhwJGppmGjgpQgTjQplQpTljwpg",
             "BfzSzRSVVMVNRMDDNBSNSnfBmbrglGQbmNpQggFjpgpbQlQb", "ZSBffLnVZdCCPJjhhL", "RGCZpWWWFlHQQbgvFssg",
             "jLnMzjnrnjjNjhrjdwbHscsVVgDVQPvPwh", "nfJnLMLzjJMtnjNnnBbZtBWBqqbTTTBRpT",
             "nddlhBtqTBqTVSlBtmCmVcRVmZggfWbcZc", "jDjvPrPSNPwrDNRWbbgWCjRRCcWm", "DzDwSpFrvrvFPQLzQnsqztBthTJnGJqlsJ",
@@ -126,4 +127,29 @@ public class Day3 {
             "dBTtFLTtVmpdLhMprSRSWMRSMR", "QvJvQbjbCgCQRBhzzRsNWNBC",
             "bjgGqQGbQnjGQgnQgbGgjJnDLHLdfPVtdDmLZdBFVVZttdTf" };
 
+    public static List<List<String[]>> split() {
+        List<List<String[]>> splittedIput = new ArrayList<>();
+        for (String string : input) {
+            String firstCompartment = string.substring(0, string.length() / 2 - 1);
+            String secondCompartment = string.substring(string.length() / 2, string.length() - 1);
+            List<String[]> splittedString = new ArrayList<>();
+            splittedString.add(firstCompartment.split(" "));
+            splittedString.add(secondCompartment.split(" "));
+            splittedIput.add(splittedString);
+        }
+        return splittedIput;
+    }
+
+    public String findTheString() {
+        for (List<String[]> rucksack : split()) {
+            for (String[] string : rucksack) {
+
+            }
+        }
+        return "S";
+    }
+
+    public static void main(String[] args) {
+        System.out.println(split());
+    }
 }
