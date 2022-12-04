@@ -535,16 +535,16 @@ public class DayTwo {
         Integer theScore = 0;
         for (int i = 0; i < input.length; i++) {
             if (values.get(input[i][0]) > values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) != Math.abs(2)) {
+                    && Math.abs(values.get(input[i][0]) - values.get(input[i][1])) != 2) {
                 theScore += values.get(input[i][1]);
             } else if (values.get(input[i][0]) > values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) == Math.abs(2)) {
+                    && Math.abs(values.get(input[i][0]) - values.get(input[i][1])) == 2) {
                 theScore += 6 + values.get(input[i][1]);
             } else if (values.get(input[i][0]) < values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) != Math.abs(2)) {
+                    && Math.abs(values.get(input[i][0]) - values.get(input[i][1])) != 2) {
                 theScore += 6 + values.get(input[i][1]);
             } else if (values.get(input[i][0]) < values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) == Math.abs(2)) {
+                    && Math.abs(values.get(input[i][0]) - values.get(input[i][1])) == 2) {
                 theScore += values.get(input[i][1]);
             } else {
                 theScore += 3 + values.get(input[i][1]);
