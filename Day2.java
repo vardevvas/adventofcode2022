@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class DayTwo {
+public class Day2 {
     static String[][] input = { { "A", "Z" }, { "C", "Z" }, { "C", "Z" }, { "A", "Z" }, { "C", "Y" }, { "C", "Z" },
             { "A", "Z" }, { "B", "Z" }, { "A", "Z" },
             { "A", "Z" }, { "C", "Z" }, { "A", "X" }, { "C", "Y" }, { "C", "Z" }, { "C", "Y" }, { "C", "Z" },
