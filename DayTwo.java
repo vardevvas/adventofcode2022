@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -515,17 +514,19 @@ public class DayTwo {
         values.put("C", 3);
         String[] test = { "A", "Z" };
         Integer theScore = 0;
-        if (values.get(test[0]) > values.get(test[1]) && values.get(test[0]) - values.get(test[1]) < 2) {
-            theScore += values.get(test[1]);
-        } else if (values.get(test[0]) < values.get(test[1]) && values.get(test[0]) - values.get(test[1]) < 2) {
-            theScore += 6 + values.get(test[1]);
-        } else if (values.get(test[0]) == values.get(test[1])) {
-            theScore += 3 + values.get(test[1]);
+        for (int i = 0; i < input.length; i++) {
+            if (values.get(input[i][0]) > values.get(input[i][1])) {
+                theScore += values.get(input[i][1]);
+            } else if (values.get(input[i][0]) == values.get(input[i][1])) {
+                theScore += 3 + values.get(input[i][1]);
+            } else {
+                theScore += 6 + values.get(input[i][1]);
+            }
         }
         return theScore;
     };
 
-    public static Integer guess() {
+    public static Integer test() {
         Map<String, Integer> values = new HashMap<String, Integer>();
         values.put("X", 1);
         values.put("Y", 2);
@@ -533,23 +534,14 @@ public class DayTwo {
         values.put("A", 1);
         values.put("B", 2);
         values.put("C", 3);
+        String[] test = { "A", "Z" };
         Integer theScore = 0;
-        for (int i = 0; i < input.length; i++) {
-            if (values.get(input[i][0]) > values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) != Math.abs(2)) {
-                theScore += values.get(input[i][1]);
-            } else if (values.get(input[i][0]) > values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) == Math.abs(2)) {
-                theScore += 6 + values.get(input[i][1]);
-            } else if (values.get(input[i][0]) < values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) != Math.abs(2)) {
-                theScore += 6 + values.get(input[i][1]);
-            } else if (values.get(input[i][0]) < values.get(input[i][1])
-                    && values.get(input[i][0]) - values.get(input[i][1]) == Math.abs(2)) {
-                theScore += values.get(input[i][1]);
-            } else {
-                theScore += 3 + values.get(input[i][1]);
-            }
+        if (values.get(test[0]) > values.get(test[1])) {
+            theScore += values.get(test[1]);
+        } else if (values.get(test[0]) == values.get(test[1])) {
+            theScore += 3 + values.get(test[1]);
+        } else {
+            theScore += 6 + values.get(test[1]);
         }
         return theScore;
     };
@@ -557,4 +549,27 @@ public class DayTwo {
     public static void main(String[] args) {
         System.out.println(guess());
     }
+
 }
+
+    // public static Integer test() {
+    // Map<String, Integer> values = new HashMap<String, Integer>();
+    // values.put("X", 1);
+    // values.put("Y", 2);
+    // values.put("Z", 3);
+    // values.put("A", 1);
+    // values.put("B", 2);
+    // values.put("C", 3);
+    // String[] test = { "A", "Z" };
+    // Integer theScore = 0;
+    // if (values.get(test[0]) > values.get(test[1])) {
+    // theScore += values.get(test[1]);
+    // } else if (values.get(test[0]) == values.get(test[1])) {
+    // theScore += 3 + values.get(test[1]);
+    // } else {
+    // theScore += 6 + values.get(test[1]);
+    // }
+    // return theScore;
+    // }; 
+    
+      
