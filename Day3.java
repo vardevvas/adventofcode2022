@@ -127,29 +127,29 @@ public class Day3 {
             "dBTtFLTtVmpdLhMprSRSWMRSMR", "QvJvQbjbCgCQRBhzzRsNWNBC",
             "bjgGqQGbQnjGQgnQgbGgjJnDLHLdfPVtdDmLZdBFVVZttdTf" };
 
-    public static List<List<String[]>> split() {
-        List<List<String[]>> splittedIput = new ArrayList<>();
-        for (String string : input) {
-            String firstCompartment = string.substring(0, string.length() / 2 - 1);
-            String secondCompartment = string.substring(string.length() / 2, string.length() - 1);
-            List<String[]> splittedString = new ArrayList<>();
-            splittedString.add(firstCompartment.split(" "));
-            splittedString.add(secondCompartment.split(" "));
-            splittedIput.add(splittedString);
+    public static String[][][] split() {
+        String[][][] splittedIput = new String[input.length][][];
+        for (int i = 0; i < input.length; i++) {
+            String[] firstCompartment = input[i].substring(0, input[i].length() / 2 - 1).split(" ");
+            String[] secondCompartment = input[i].substring(input[i].length() / 2, input[i].length() - 1).split(" ");
+            String[][] splittedString = { firstCompartment, secondCompartment };
+            splittedIput[i] = splittedString;
         }
         return splittedIput;
     }
 
-    public String findTheString() {
-        for (List<String[]> rucksack : split()) {
-            for (String[] string : rucksack) {
+    public static String findTheString() {
+        String[][][] splittedIput = split();
+        for (int i = 0; i < splittedIput.length; i++) {
+            for (int j = 0; j < splittedIput[i].length; j++) {
 
             }
+            ;
         }
         return "S";
     }
 
     public static void main(String[] args) {
-        System.out.println(split());
+        System.out.println(findTheString());
     }
 }
